@@ -1,0 +1,35 @@
+{
+  "name": "dumbo",
+  "version": "1.0.0",
+  "description": "Dummy HTTP server that accepts and logs requests",
+  "repository": "git@gitlab.com:coditory/node-dummy.git",
+  "license": "MIT",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json -c tslint.json 'src/**/*.ts'",
+    "prebuild": "npm run lint",
+    "build": "tsc",
+    "start": "nodemon --exec ts-node --ext js,ts,json src/index.ts",
+    "test:unit": "jest --passWithNoTests --testMatch '**/test/**/*!(.*).spec.ts'",
+    "test:intg": "jest --passWithNoTests --testMatch '**/test/**/*.intg.spec.ts'",
+    "test": "jest --passWithNoTests",
+    "ci": "npm run build && npm run test"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chalk": "^2.4.2",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/request": "^2.48.3",
+    "@types/body-parser": "^1.17.1",
+    "@types/express": "^4.17.1",
+    "eslint": "^6.4.0",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.2",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
+  }
+}

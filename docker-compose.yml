@@ -1,0 +1,7 @@
+version: '3'
+services:
+  dummy:
+    build: .
+    ports:
+      - "8081:8081"
+    restart: unless-stopped
